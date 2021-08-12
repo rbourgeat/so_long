@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 12:23:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/08/12 12:49:47 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/08/12 14:00:44 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,11 @@ BFLAGS	=	0
 MLX_DIR	=	./mlx_mac
 MLX		=	libmlx.dylib
 
-SRC		=	
+SRC		=	srcs/main.c \
+			srcs/exit.c \
+			srcs/check.c \
+			srcs/key_manager.c \
+			srcs/parser.c
 
 OBJ		=	$(SRC:%.c=%.o)
 
@@ -65,4 +69,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

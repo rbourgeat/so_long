@@ -1,1 +1,2 @@
-# so_long *Mac* and *Linux*
+# so_long
+## **Mac** & **Linux** !
