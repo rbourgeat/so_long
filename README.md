@@ -1,1 +1,1 @@
-# so_long
+# so_long *Mac* and *Linux*
