@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:22:04 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/12 13:28:42 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 12:34:53 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,12 @@ int key_event(t_vars *vars)
     return (1);
 }
 
-// int event_loop(t_vars *vars)
-// {
-//     draw_map(vars);
-//     draw_player(vars);
-//     key_event(vars);
-//     if (BONUS)
-//         counter_bonus(vars);
-//     return (1);
-// }
+int event_loop(t_vars *vars)
+{
+    draw_map(vars);
+    draw_player(vars);
+    key_event(vars);
+    if (BONUS)
+        counter_bonus(vars);
+    return (1);
+}

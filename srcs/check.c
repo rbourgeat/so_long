@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:31:59 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/12 13:40:13 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/12 18:21:41 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int check_is_file(char *av, t_vars *vars)
 	while (av[i] != '.')
 	{
 		if (i == 0)
-			__exit__("Error\n☞ file error\n", vars, FAILURE);
+			__exit__("Error\n☞ bad file\n", vars, FAILURE);
 		i--;
 	}
 	i++;
 	if (ft_strcmp((av + i), "ber") != 0)
-		__exit__("Error\n☞ file error\n", vars, FAILURE);
+		__exit__("Error\n☞ bad file extension\n", vars, FAILURE);
 	return (1);
 }
 
@@ -112,9 +112,7 @@ t_check check_is_map(char *av, t_vars *vars)
 		check.read = get_next_line(check.fd, &check.line);
 		check.len = ft_strlen(check.line);
 		if (check.prev_len != -1 && check.prev_len != check.len)
-		{
 			__exit__("Error\n☞ map error\n", vars, FAILURE);
-		}
 		check_play(check.line, check.read, vars);
 		check_is_nbr(check.line, vars);
 		if (check.i++ == 0 || check.read == 0)

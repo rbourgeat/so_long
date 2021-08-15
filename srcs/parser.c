@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:31:15 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/12 13:43:24 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/12 16:39:05 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void get_value(t_vars *vars, t_check check)
 void parsing(char *av, t_vars *vars)  
 {
     t_check check;
- 
+
     int i = 0;
-    
+
     check_is_file(av, vars);
     check = check_is_map(av, vars);
     vars->map = ft_calloc(sizeof(char *), (check.i + 1));

@@ -6,15 +6,15 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 12:23:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/08/12 14:00:44 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/08/12 16:29:15 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror #-g3 -fsanitize=address
-MFLAGS	=	-Lmlx -lmlx -framework OpenGL -framework AppKit
+CFLAGS	=	-Wall -Wextra -Werror -g3 -fsanitize=address
+MFLAGS	=	-L./mlx_mac -lmlx -framework OpenGL -framework AppKit #-lz
 IFLAGS	=	-I. -I./libft -I./mlx_mac
 LFLAGS	=	-L./libft -lft
 BFLAGS	=	0
@@ -26,7 +26,10 @@ SRC		=	srcs/main.c \
 			srcs/exit.c \
 			srcs/check.c \
 			srcs/key_manager.c \
-			srcs/parser.c
+			srcs/parser.c \
+			srcs/textures.c \
+			srcs/images.c \
+			srcs/bonus.c
 
 OBJ		=	$(SRC:%.c=%.o)
 
@@ -44,7 +47,7 @@ $(NAME):	$(OBJ)
 			$(MAKE) -C ./$(MLX_DIR)
 			cp ./$(MLX_DIR)/$(MLX) .
 			$(MAKE) -C libft
-			$(CC) $(CFLAGS) $(OBJ) $(IFLAGS) $(LFLAGS) $(MFLAGS) -o $@ 
+			$(CC) $(CFLAGS) $(OBJ) $(IFLAGS) $(LFLAGS) $(MFLAGS) -o $@
 
 
 all:		$(NAME)

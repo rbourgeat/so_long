@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 12:51:23 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/12 14:04:08 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 13:21:36 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <stdint.h>
 # include <fcntl.h>
 # include "./libft/libft.h"
-# include "./mlx_linux/mlx.h"
-# include "./mlx_mac/mlx.h"
+// # include "./mlx_linux/mlx.h"
+// # include "./mlx_mac/mlx.h"
 # include <mlx.h>
 
 # if defined (__APPLE__) && (__MACH__)
@@ -41,9 +41,6 @@
 
 #define SUCCESS 0
 #define FAILURE 1
-
-#define WIDTH 1000;
-#define HEIGHT 1000;
 
 typedef struct s_check
 {
@@ -95,16 +92,26 @@ typedef struct s_vars
 	int counter;
 }		t_vars;
 
-int		key_press(int keycode, t_vars *vars);
-int		key_release(int keycode, t_vars *vars);
-int		key_hook(int keycode);
-t_key	*init_key(void);
+int check_is_file(char *av, t_vars *vars);
+int event_loop(t_vars *vars);
 
-void	_free_(void *vars);
-int		__exit__(char *msg, t_vars *vars, int ret);
+int key_press(int keycode, t_vars *vars);
+int key_release(int keycode, t_vars *vars);
+int key_hook(int keycode);
+t_key *init_key(void);
 
-int		check_is_file(char *av, t_vars *vars);
+int __exit__(char *msg, t_vars *vars, int ret);
+void pixel_put_color(t_vars *vars, int x, int y, unsigned int color);
+void draw_pixe(t_vars *vars);
+
 t_check check_is_map(char *av, t_vars *vars);
-void	parsing(char *av, t_vars *vars);
+void draw_one_pixe(t_vars *vars, int i, int x_index, int y_index);
+void draw_map(t_vars *vars);
+void parsing(char *av, t_vars *vars);
+int main(int ac, char **av);
+void draw_player(t_vars *vars);
+void tex_all(t_vars *vars);
+void counter_bonus(t_vars *vars);
+void _free_(void *vars);
 
 #endif

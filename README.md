@@ -1,2 +1,2 @@
-# so_long
+# so_long 🐬 
 ## **Mac** & **Linux** !

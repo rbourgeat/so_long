@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 12:51:37 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/12 14:06:48 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 13:20:51 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,21 @@ int main(int argc, char **argv)
 		__exit__("Error\n☞ Can't malloc (img) !\n", vars, FAILURE);
 	if (!(vars->mlx = mlx_init()))
 		__exit__("Error\n☞ Can't init mlx !\n", vars, FAILURE);
-	if (!(vars->win = mlx_new_window(vars->mlx, 1000, 1000, "so_long")))
+	if (!(vars->win = mlx_new_window(vars->mlx, 100 * vars->map_x_len, 100 * vars->map_y_len, "so_long by krolhm")))
 		__exit__("Error\n☞ Can't create Window !\n", vars, FAILURE);
-	if (!(vars->img->img = mlx_new_image(vars->mlx, 1000, 1000)))
+	if (!(vars->img->img = mlx_new_image(vars->mlx, 100 * vars->map_x_len, 100 * vars->map_y_len)))
 		__exit__("Error\n☞ Can't mlx image !\n", vars, FAILURE);
-	// tex_all(vars);
-
-
+	tex_all(vars);
+	vars->img->addr = mlx_get_data_addr(vars->img->img, 
+		&vars->img->bits_per_pixel, &vars->img->line_len, &vars->img->endian);
+	vars->img->width = 1000;
+	vars->img->height = 1000;
+	vars->counter = 0;
+	mlx_hook(vars->win, 2, 1L << 0, key_press, vars);
+	mlx_hook(vars->win, 3, 1L << 1, key_release, vars);
+	mlx_hook(vars->win, RED_CROSS, 1L << 2, event_quit, vars);
+	mlx_loop_hook(vars->mlx, event_loop, vars);
+	mlx_loop(vars->mlx);
 
 	return (0);
 }

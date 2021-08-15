@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   bonus.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 14:01:04 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 11:50:40 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/12 16:22:19 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/12 16:22:32 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../so_long.h"
 
-int	ft_strlen(const char *str)
+void counter_bonus(t_vars *vars)
 {
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
+    const char *str = ft_itoa(vars->counter);
+    if (!str)
+        __exit__(NULL, vars, FAILURE);
+    mlx_string_put(vars->mlx, vars->win, 100, 100, 0xFF0000, (char *)str);
+    free((char *)str);
 }
