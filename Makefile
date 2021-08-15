@@ -6,14 +6,14 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 12:23:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/08/12 16:29:15 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/08/15 21:37:59 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror #-g3 -fsanitize=address
 MFLAGS	=	-L./mlx_mac -lmlx -framework OpenGL -framework AppKit #-lz
 IFLAGS	=	-I. -I./libft -I./mlx_mac
 LFLAGS	=	-L./libft -lft

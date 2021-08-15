@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:31:59 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 20:24:14 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 21:36:40 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ static int check_is_nbr(char *str, t_vars *vars)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] != '1' && str[i] != '0' && str[i] != 'P' && str[i] != 'C' && str[i] != 'E' && (str[i] != 'B' && BONUS))
+		if (str[i] != '1' && str[i] != '0' && str[i] != 'P' && str[i] != 'C' && str[i] != 'E' && str[i] != 'B')
 			__exit__("Error\n☞ Bad char in map\n", vars, FAILURE);
+		if (BONUS == 0 && str[i] == 'B')
+			__exit__("Error\n☞ Bad bonus in map\n", vars, FAILURE);
 		i++;
 	}
 	return (1);

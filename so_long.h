@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 12:51:23 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 20:20:42 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 21:28:23 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@
 // # include "./mlx_linux/mlx.h"
 // # include "./mlx_mac/mlx.h"
 # include <mlx.h>
+
+#define TEX_PLAYER "./textures/iop.xpm"
+#define TEX_WALL "./textures/tree.xpm"
+#define TEX_COLLECT "./textures/dofawa.xpm"
+#define TEX_EXIT "./textures/zaap.xpm"
+#define TEX_ZERO "./textures/grass.xpm"
+
+#define TEX_ENEMY "./textures/bouftou.xpm"
+#define TEX_PLAYER2 "./textures/iop2.xpm"
 
 # if defined (__APPLE__) && (__MACH__)
 # define KEY_ESC 53
@@ -113,5 +122,6 @@ void draw_player(t_vars *vars);
 void tex_all(t_vars *vars);
 void counter_bonus(t_vars *vars);
 void _free_(void *vars);
+void set_tex(char *path, t_vars *vars, t_img *tex);
 
 #endif

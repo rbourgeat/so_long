@@ -6,19 +6,11 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 14:08:36 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 20:27:46 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 21:24:30 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-#define TEX_PLAYER "./textures/iop.xpm"
-#define TEX_WALL "./textures/tree.xpm"
-#define TEX_COLLECT "./textures/dofawa.xpm"
-#define TEX_EXIT "./textures/zaap.xpm"
-#define TEX_ZERO "./textures/grass.xpm"
-
-#define TEX_ENEMY "./textures/bouftou.xpm"
 
 void set_tex(char *path, t_vars *vars, t_img *tex)
 {
