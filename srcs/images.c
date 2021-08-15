@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 15:47:51 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 13:18:24 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 20:21:10 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,15 @@ void draw_map(t_vars *vars)
 		while (vars->map[y][x])
 		{
 			if (vars->map[y][x] == 'C')
-			{
-				draw_one_pixe(vars, 4, x, y);
 				draw_one_pixe(vars, 2, x, y);
-			}
 			else if (vars->map[y][x] == 'E')
 				draw_one_pixe(vars, 3, x, y);
 			else if (vars->map[y][x] == '1')
 				draw_one_pixe(vars, 1, x, y);
 			else if (vars->map[y][x] == '0')
 				draw_one_pixe(vars, 4, x, y);
+			else if (vars->map[y][x] == 'B' && BONUS)
+				draw_one_pixe(vars, 5, x, y);
 			x++;
 		}
 		y++;

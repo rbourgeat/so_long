@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:22:04 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 12:34:53 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 20:37:51 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,8 @@ int key_event(t_vars *vars)
 
     if (vars->collect == 0 && vars->map[vars->mouv->y][vars->mouv->x] == 'E')
         __exit__("YOU WIN !\n", vars, SUCCESS);
+    else if (vars->map[vars->mouv->y][vars->mouv->x] == 'B')
+        __exit__("GAME OVER !\n", vars, SUCCESS);
     else
         player_mouv(vars);
     return (1);

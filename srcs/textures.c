@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 14:08:36 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 13:09:07 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 20:27:46 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #define TEX_COLLECT "./textures/dofawa.xpm"
 #define TEX_EXIT "./textures/zaap.xpm"
 #define TEX_ZERO "./textures/grass.xpm"
+
+#define TEX_ENEMY "./textures/bouftou.xpm"
 
 void set_tex(char *path, t_vars *vars, t_img *tex)
 {
@@ -38,4 +40,5 @@ void tex_all(t_vars *vars)
 	set_tex(TEX_COLLECT, vars, &vars->tex[2]);
 	set_tex(TEX_EXIT, vars, &vars->tex[3]);
 	set_tex(TEX_ZERO, vars, &vars->tex[4]);
+	set_tex(TEX_ENEMY, vars, &vars->tex[5]);
 }

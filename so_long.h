@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 12:51:23 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 13:21:36 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/15 20:20:42 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct s_vars
 	t_key *key;
 	t_mouv *mouv;
 	t_img *img;
-	t_img tex[5];
+	t_img tex[6];
 	int counter;
 }		t_vars;
 
