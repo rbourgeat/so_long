@@ -6,23 +6,24 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:11:49 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/15 12:06:13 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/30 15:20:03 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void  _free_(void *vars)
+void	_free_(void *vars)
 {
 	if (vars)
 		free(vars);
-	vars = NULL;	
+	vars = NULL;
 }
 
 #if defined(__APPLE__) && defined(__MACH__)
-void destroy_img(t_vars *vars)
+void	destroy_img(t_vars *vars)
 {
-	int i;
+	int	i;
+
 	if (vars->mlx)
 	{
 		if (vars->img)
@@ -36,12 +37,13 @@ void destroy_img(t_vars *vars)
 		mlx_destroy_window(vars->mlx, vars->win);
 		_free_(vars->mlx);
 	}
-	
 }
-#else 
-void destroy_img(t_vars *vars)
+#else
+
+void	destroy_img(t_vars *vars)
 {
-	int i;
+	int	i;
+
 	if (vars->mlx)
 	{
 		if (vars->img)
@@ -57,20 +59,19 @@ void destroy_img(t_vars *vars)
 		_free_(vars->mlx);
 	}
 }
-
 #endif
 
-
-void  free_vars(t_vars *vars)
+void	free_vars(t_vars *vars)
 {
-	int i;
+	int	i;
+
 	if (vars)
 	{
 		destroy_img(vars);
 		if (vars->key)
-			 _free_(vars->key);
+			_free_(vars->key);
 		if (vars->mouv)
-		 	_free_(vars->mouv);
+			_free_(vars->mouv);
 		i = 0;
 		if (vars->map)
 		{

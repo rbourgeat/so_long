@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 12:23:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/08/15 21:37:59 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/08/30 15:28:57 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC		=	srcs/main.c \
 			srcs/exit.c \
 			srcs/check.c \
 			srcs/key_manager.c \
+			srcs/mouvement.c \
 			srcs/parser.c \
 			srcs/textures.c \
 			srcs/images.c \

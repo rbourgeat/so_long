@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbourgea <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:20:31 by rbourgea          #+#    #+#             */
-/*   Updated: 2019/11/10 15:24:26 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:33:15 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned	int	i;
-	unsigned	int	limit;
+	unsigned int	i;
+	unsigned int	limit;
 
 	i = 0;
 	limit = (unsigned int)(dstsize - 1);

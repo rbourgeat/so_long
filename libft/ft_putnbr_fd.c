@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbourgea <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 14:11:59 by rbourgea          #+#    #+#             */
-/*   Updated: 2019/11/12 13:15:10 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:59:56 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	int	nb;
+	long int	nb;
 
 	nb = n;
 	if (nb == -2147483648)

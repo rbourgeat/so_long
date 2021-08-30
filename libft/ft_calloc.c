@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbourgea <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:52:42 by rbourgea          #+#    #+#             */
-/*   Updated: 2019/11/10 15:12:29 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:09:25 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*mem;
 
-	if ((mem = malloc(count * size)) == NULL)
+	mem = malloc(count * size);
+	if (mem == NULL)
 		return (NULL);
 	ft_bzero(mem, count * size);
 	return (mem);
