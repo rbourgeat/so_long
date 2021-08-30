@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 13:11:49 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 15:20:03 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/08/30 17:50:10 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	destroy_img(t_vars *vars)
 			_free_(vars->img);
 		}
 		i = 0;
-		while (i < 5)
+		while (i < 6)
 			mlx_destroy_image(vars->mlx, vars->tex[i++].img);
 		mlx_destroy_window(vars->mlx, vars->win);
 		mlx_destroy_display(vars->mlx);
