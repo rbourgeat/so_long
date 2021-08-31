@@ -5,14 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/11/06 16:06:39 by rbourgea          #+#    #+#              #
-#    Updated: 2021/08/30 14:20:11 by rbourgea         ###   ########.fr        #
+#    Created: 2021/08/31 14:21:32 by rbourgea          #+#    #+#              #
+#    Updated: 2021/08/31 14:21:32 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS =	ft_bzero.c \
+SRCS =	ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memccpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_memcmp.c \
 		ft_strlen.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
@@ -23,12 +29,20 @@ SRCS =	ft_bzero.c \
 		ft_tolower.c \
 		ft_strchr.c \
         ft_strrchr.c \
+		ft_strncmp.c \
 		ft_strcmp.c \
 		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_strnstr.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_split.c \
 		ft_itoa.c \
+		ft_strmapi.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putstr.c \
@@ -36,13 +50,15 @@ SRCS =	ft_bzero.c \
 		ft_putnbr_fd.c \
 		get_next_line.c
 
-BONUS_SRCS =	ft_lstadd_front.c \
+BONUS_SRCS =	ft_lstnew.c \
+			 	ft_lstadd_front.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
 				ft_lstadd_back.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \
-				ft_lstiter.c
+				ft_lstiter.c \
+				ft_lstmap.c
 
 OBJS= ${SRCS:.c=.o}
 

@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/12 12:23:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/08/30 15:28:57 by rbourgea         ###   ########.fr        #
+#    Created: 2021/08/31 14:22:37 by rbourgea          #+#    #+#              #
+#    Updated: 2021/08/31 14:25:47 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror # -g -fsanitize=address
 MFLAGS	=	-L./mlx_mac -lmlx -framework OpenGL -framework AppKit #-lz
 IFLAGS	=	-I. -I./libft -I./mlx_mac
 LFLAGS	=	-L./libft -lft
@@ -26,11 +26,13 @@ SRC		=	srcs/main.c \
 			srcs/exit.c \
 			srcs/check.c \
 			srcs/key_manager.c \
-			srcs/mouvement.c \
 			srcs/parser.c \
 			srcs/textures.c \
 			srcs/images.c \
-			srcs/bonus.c
+			srcs/bonus.c \
+			srcs/utils.c \
+			srcs/utils2.c \
+
 
 OBJ		=	$(SRC:%.c=%.o)
 

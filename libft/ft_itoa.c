@@ -5,43 +5,74 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 14:43:04 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 13:58:52 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:16:06 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:16:06 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_get_digits(int n)
+static int	ft_estim(long n)
 {
-	if ((n / 10) == 0)
-		return (1);
+	size_t	estim;
+	int		isneg;
+
+	estim = 0;
+	isneg = 0;
+	if (n < 0)
+	{
+		estim++;
+		isneg++;
+		n = -n;
+	}
+	while (n >= 1)
+	{
+		estim++;
+		n /= 10;
+	}
+	return (estim);
+}
+
+static char	*ft_gen(char *rtn, long nbr, int len, int isneg)
+{
+	if (nbr != 0)
+		rtn = malloc(sizeof(char) * (len + 1));
 	else
-		return (ft_get_digits(n / 10) + 1);
+		return (rtn = ft_strdup("0"));
+	if (!rtn)
+		return (0);
+	isneg = 0;
+	if (nbr < 0)
+	{
+		isneg++;
+		nbr = -nbr;
+	}
+	rtn[len] = '\0';
+	while (--len)
+	{
+		rtn[len] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
+	if (isneg == 1)
+		rtn[0] = '-';
+	else
+		rtn[0] = (nbr % 10) + '0';
+	return (rtn);
 }
 
 char	*ft_itoa(int n)
 {
-	unsigned int	nb;
-	int				len;
-	char			*str;
+	int		len;
+	char	*rtn;
+	long	nbr;
+	int		isneg;
 
-	nb = (unsigned int)n;
-	len = ft_get_digits(n);
-	if (n < 0)
-	{
-		nb = -(unsigned int)n;
-		len++;
-	}
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	while (len-- >= 0)
-	{
-		str[len] = nb % 10 + '0';
-		nb /= 10;
-	}
-	if (n < 0)
-		str[0] = '-';
-	return (str);
+	nbr = n;
+	len = ft_estim(nbr);
+	rtn = 0;
+	isneg = 0;
+	rtn = ft_gen(rtn, nbr, len, isneg);
+	if (!rtn)
+		return (0);
+	return (rtn);
 }

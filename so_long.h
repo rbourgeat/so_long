@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 12:51:23 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 14:47:29 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:22:30 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:26:15 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <stdint.h>
 # include <fcntl.h>
 # include "./libft/libft.h"
-// # include "./mlx_linux/mlx.h"
-// # include "./mlx_mac/mlx.h"
 # include <mlx.h>
 
 # define TEX_PLAYER "./textures/iop.xpm"
@@ -31,6 +29,8 @@
 
 # define TEX_ENEMY "./textures/bouftou.xpm"
 # define TEX_PLAYER2 "./textures/iop2.xpm"
+//# define TEX_PLAYER3 "./textures/iop3.xpm"
+//# define TEX_PLAYER4 "./textures/iop4.xpm"
 
 # if defined (__APPLE__) && (__MACH__)
 #  define KEY_ESC 53
@@ -83,10 +83,12 @@ typedef struct s_key
 	int		w;
 	int		s;
 	int		d;
+	int		dir;
 }			t_key;
 
 typedef struct s_vars
 {
+	int		fail;
 	void	*mlx;
 	void	*win;
 	char	**map;
@@ -96,9 +98,9 @@ typedef struct s_vars
 	t_key	*key;
 	t_mouv	*mouv;
 	t_img	*img;
-	t_img	tex[6];
+	t_img	tex[9];
 	int		counter;
-}			t_vars;
+}		t_vars;
 
 int		check_is_file(char *av, t_vars *vars);
 int		event_loop(t_vars *vars);
@@ -109,6 +111,7 @@ int		key_hook(int keycode);
 t_key	*init_key(void);
 
 int		__exit__(char *msg, t_vars *vars, int ret);
+int		__exitc__(int set, t_vars *vars, int ret);
 void	pixel_put_color(t_vars *vars, int x, int y, unsigned int color);
 void	draw_pixe(t_vars *vars);
 
@@ -120,7 +123,14 @@ int		main(int ac, char **av);
 void	draw_player(t_vars *vars);
 void	tex_all(t_vars *vars);
 void	counter_bonus(t_vars *vars);
-void	_free_(void *vars);
+void	free_(void *vars);
 void	set_tex(char *path, t_vars *vars, t_img *tex);
-
+void	data_mouv(t_vars *vars);
+void	bonus_key(int keycode, t_vars *vars);
+void	player_mouv(t_vars *vars);
+int		event_loop(t_vars *vars);
+int		key_event(t_vars *vars);
+void	data_mouv2(t_vars *vars, int i);
+int		check_is_file(char *av, t_vars *vars);
+void	play_loop(int *nbr, int r, t_vars *vars);
 #endif

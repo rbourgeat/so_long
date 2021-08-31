@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 16:22:19 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 14:59:37 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:22:51 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:22:51 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	counter_bonus(t_vars *vars)
 {
-	const char	*str = ft_itoa(vars->counter);
+	const char		*str = ft_itoa(vars->counter);
 
 	if (!str)
 		__exit__(NULL, vars, FAILURE);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 15:47:51 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 15:02:06 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:23:07 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:23:07 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	pixel_put_color(t_vars *vars, int x, int y, unsigned int color)
 
 void	draw_one_pixe(t_vars *vars, int i, int x_index, int y_index)
 {
-	const double	pixe_x = ((double)(100 * vars->map_x_len)
-			/ vars->map_x_len);
-	const double	pixe_y = ((double)(100 * vars->map_y_len)
-			/ vars->map_y_len);
+	const double	pixe_x = ((double)(100 * vars->map_x_len) /
+		vars->map_x_len);
+	const double	pixe_y = ((double)(100 * vars->map_y_len) /
+		vars->map_y_len);
 	char			*addr;
 	double			x;
 	double			y;
@@ -51,8 +51,8 @@ void	draw_one_pixe(t_vars *vars, int i, int x_index, int y_index)
 
 void	draw_map(t_vars *vars)
 {
-	int	y;
-	int	x;
+	int		y;
+	int		x;
 
 	y = 0;
 	while (vars->map[y])
@@ -79,6 +79,6 @@ void	draw_map(t_vars *vars)
 
 void	draw_player(t_vars *vars)
 {
-	draw_one_pixe(vars, 0, vars->mouv->x, vars->mouv->y);
+	draw_one_pixe(vars, vars->key->dir, vars->mouv->x, vars->mouv->y);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img->img, 0, 0);
 }

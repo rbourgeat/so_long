@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 13:31:15 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 14:52:20 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:23:22 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:23:22 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	get_value(t_vars *vars, t_check check)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	vars->collect = 0;
@@ -42,8 +42,8 @@ void	get_value(t_vars *vars, t_check check)
 
 void	parsing(char *av, t_vars *vars)
 {
-	t_check	check;
-	int		i;
+	t_check		check;
+	int			i;
 
 	i = 0;
 	check_is_file(av, vars);

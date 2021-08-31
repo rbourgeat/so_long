@@ -5,129 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 13:35:54 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 14:39:54 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:21:14 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:21:14 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*gnl_strjoin(char const *s1, char const *s2)
+char	*recurs_if(char *out, int depth, int *ret, char *buff)
 {
-	char	*tab;
-	size_t	len;
-	size_t	i;
-	size_t	j;
-
-	if (!s1 && !s2)
+	if (!out)
 		return (0);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	len = i + j + 1;
-	tab = (char *)malloc(sizeof(char) * len);
-	if (!tab)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1 && i < len && s1[i])
-	{
-		tab[i] = s1[i];
-		i++;
-	}
-	while (s2 && i < len && s2[j])
-		tab[i++] = s2[j++];
-	tab[i] = '\0';
-	free((char *)s1);
-	return (tab);
+	out[depth] = 0;
+	*ret = 1;
+	if (buff[0] == 0)
+		*ret = 0;
+	return (out);
 }
 
-static char	*first_line(char *str)
+char	*recurs(int depth, int *ret, int fd)
 {
-	char	*line;
-	int		i;
+	char	buff[1];
+	char	*out;
+	int		test;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] && str[i] != '\n')
-		i++;
-	line = (char *)malloc(sizeof(char) * i + 1);
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (str[i] && str[i] != '\n')
+	test = read(fd, buff, 1);
+	if (test == 0)
+		buff[0] = 0;
+	if (buff[0] == '\n' || buff[0] == 0)
 	{
-		line[i] = str[i];
-		i++;
+		out = malloc(sizeof(char) * depth + 1);
+		return (recurs_if(out, depth, ret, buff));
 	}
-	line[i] = '\0';
-	return (line);
+	else
+	{
+		out = recurs(depth + 1, ret, fd);
+		if (!out)
+			return (0);
+		out[depth] = buff[0];
+	}
+	return (out);
 }
 
-static char	*save_line(char *save)
+int	get_next_line(int fd, char **out)
 {
-	char	*str;
-	int		i;
-	int		j;
+	int		ret;
 
-	i = 0;
-	j = 0;
-	if (!save)
-		return (0);
-	while (save[i] && save[i] != '\n')
-		i++;
-	if (!save[i])
-	{
-		free(save);
-		return (0);
-	}
-	str = (char *)malloc(sizeof(char) * ft_strlen(save) - i + 1);
-	if (!str)
-		return (NULL);
-	i++;
-	while (save[i])
-		str[j++] = save[i++];
-	free(save);
-	str[j] = '\0';
-	return (str);
-}
-
-static int	ft_newline(char *save)
-{
-	int	i;
-
-	i = 0;
-	if (!save)
-		return (0);
-	while (save[i])
-	{
-		if (save[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	get_next_line(int fd, char **line)
-{
-	char		buf[BUFFER_SIZE + 1];
-	int			read_num;
-	static char	*save;
-
-	read_num = 1;
-	if (fd < 0 || !line || BUFFER_SIZE <= 0)
-		return (-1);
-	while (read_num != 0 && !ft_newline(save))
-	{
-		read_num = read(fd, buf, BUFFER_SIZE);
-		if (read_num == -1)
-			return (-1);
-		buf[read_num] = '\0';
-		save = gnl_strjoin(save, buf);
-	}
-	*line = first_line(save);
-	save = save_line(save);
-	if (read_num == 0)
-		return (0);
-	return (1);
+	ret = 1;
+	*out = recurs(0, &ret, fd);
+	return (ret);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 14:11:55 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/30 14:01:50 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/08/31 14:19:34 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/08/31 14:19:34 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	if (s)
