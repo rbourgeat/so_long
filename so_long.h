@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:22:30 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/31 14:26:15 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/03 11:27:07 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 
 # define TEX_ENEMY "./textures/bouftou.xpm"
 # define TEX_PLAYER2 "./textures/iop2.xpm"
+
 //# define TEX_PLAYER3 "./textures/iop3.xpm"
 //# define TEX_PLAYER4 "./textures/iop4.xpm"
 

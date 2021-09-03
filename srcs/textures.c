@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:23:27 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/31 14:23:27 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/03 11:29:45 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	tex_all(t_vars *vars)
 	set_tex(TEX_ZERO, vars, &vars->tex[4]);
 	set_tex(TEX_ENEMY, vars, &vars->tex[5]);
 	set_tex(TEX_PLAYER2, vars, &vars->tex[6]);
+}
+
 //	set_tex(TEX_PLAYER3, vars, &vars->tex[7]);
 //	set_tex(TEX_PLAYER4, vars, &vars->tex[8]);
-}

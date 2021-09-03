@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:23:12 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/31 14:23:12 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/03 11:29:10 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,16 @@ void	bonus_key(int keycode, t_vars *vars)
 {
 	if (keycode == KEY_A && vars->key->a == 1)
 		vars->key->dir = 6;
-//	else if (keycode == KEY_W && vars->key->w == 1)
-//		vars->key->dir = 7;
-//	else if (keycode == KEY_S && vars->key->s == 1)
-//		vars->key->dir = 8;
 	else if (keycode == KEY_D && vars->key->d == 1)
 		vars->key->dir = 0;
 }
+
+/*	
+**	else if (keycode == KEY_W && vars->key->w == 1)
+**		vars->key->dir = 7;
+**	else if (keycode == KEY_S && vars->key->s == 1)
+**		vars->key->dir = 8;
+*/
 
 int	key_release(int keycode, t_vars *vars)
 {
