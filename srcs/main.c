@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:23:17 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/31 14:23:17 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/05 15:25:35 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	event_quit(t_vars *vars)
 void	init_all(t_vars *vars)
 {
 	vars->win = mlx_new_window(vars->mlx, 100 * vars->map_x_len, 100
-			* vars->map_y_len, "so_long car");
+			* vars->map_y_len, "so_long by krolhm");
 	if (!vars->win)
 		__exit__("Error\n☞ Can't create Window !\n", vars, FAILURE);
 	vars->img->img = mlx_new_image(vars->mlx, 100 * vars->map_x_len, 100
