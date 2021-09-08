@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:23:27 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/09/03 11:29:45 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/07 19:35:44 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	set_tex(char *path, t_vars *vars, t_img *tex)
 	const int	fd = open(path, O_RDONLY);
 
 	if (fd < 0)
-		__exit__("path Error\n", vars, FAILURE);
+	{
+		ft_putstr("Error: Bad images path !\n");
+		exit(0);
+	}
 	tex->img = mlx_xpm_file_to_image(vars->mlx, path, &tex->width,
 			&tex->height);
 	if (!tex->img)

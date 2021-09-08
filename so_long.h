@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:22:30 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/09/03 11:27:07 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/07 19:35:13 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,5 @@ int		key_event(t_vars *vars);
 void	data_mouv2(t_vars *vars, int i);
 int		check_is_file(char *av, t_vars *vars);
 void	play_loop(int *nbr, int r, t_vars *vars);
+void	free_vars(t_vars *vars);
 #endif

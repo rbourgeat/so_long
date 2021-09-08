@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:23:33 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/08/31 14:23:33 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/09/08 13:54:26 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,9 @@ int	__exitc__(int set, t_vars *vars, int ret)
 		else if (vars->fail == 4)
 			__exit__("Error\n☞ Bad map\n", vars, ret);
 		else if (vars->fail == 5)
-			__exit__("Error\n☞ map no exist\n", vars, ret);
+			__exit__("Error\n☞ Map not exist\n", vars, ret);
 		else if (vars->fail == 6)
-			__exit__("Error\n☞ map error\n", vars, ret);
+			__exit__("Error\n☞ Map error\n", vars, ret);
 	}
 	else
 		if (!vars->fail)
